@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Centrado (CSS)</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+   <div class="form-container">
+  <form class="my-form">
+    <h2>Mi Formulario</h2>
+
+    <div class="form-group">
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" name="nombre" placeholder="Juan">
+    </div>
+
+    <div class="form-group">
+      <label for="apellido">Apellido:</label>
+      <input type="text" id="apellido" name="apellido" placeholder="Hernández">
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" placeholder="email.example@example.com">
+    </div>
+
+     <div class="form-group">
+      <label for="telefono">telefono:</label>
+      <input type="text" id="telefono" name="telefono" placeholder="+57 000 000 00 00">
+    </div>
+
+     <div class="form-group">
+      <label for="date">Fecha de nacimiento:</label>
+      <input type="date" id="nacimiento" name="nacimiento">
+    </div>
+
+    <div class="checkbox-group">
+      <input type="checkbox" id="cambiarColor" class="color-toggle">
+      <label for="cambiarColor">Cambiar color de fondo</label>
+    </div>
+
+    <button type="submit">Validar</button>
+  </form>
+</div>
+
