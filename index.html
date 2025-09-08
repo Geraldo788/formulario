@@ -1,47 +1,119 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario Centrado (CSS)</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Formulario Avanzado - GFPI-F-135 V04</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-   <div class="form-container">
-  <form class="my-form">
-    <h2>Mi Formulario</h2>
 
-    <div class="form-group">
-      <label for="nombre">Nombre:</label>
-      <input type="text" id="nombre" name="nombre" placeholder="Juan">
-    </div>
+  <!-- 18. Navegación fija -->
+  <nav class="main-nav">
+    <ul>
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#formulario">Formulario</a></li>
+      <li><a href="#tarjetas">Tarjetas</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </nav>
 
-    <div class="form-group">
-      <label for="apellido">Apellido:</label>
-      <input type="text" id="apellido" name="apellido" placeholder="Hernández">
-    </div>
+  <main>
+    <section id="inicio" class="hero">
+      <h1 class="title">Bienvenido</h1>
+      <p class="lead">Ejemplo con pseudo-clases y pseudo-elementos en CSS.</p>
+    </section>
 
-    <div class="form-group">
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" placeholder="email.example@example.com">
-    </div>
+    <!-- 2. :target -->
+    <section id="formulario" class="section-form">
+      <h2 class="section-title">Formulario</h2>
 
-     <div class="form-group">
-      <label for="telefono">telefono:</label>
-      <input type="text" id="telefono" name="telefono" placeholder="+57 000 000 00 00">
-    </div>
+      <a href="#mensaje-oculto" class="show-msg-link">Mostrar mensaje oculto</a>
+      <div id="mensaje-oculto" class="hidden-message">
+        <p>¡Aparecí gracias a <code>:target</code>!</p>
+      </div>
 
-     <div class="form-group">
-      <label for="date">Fecha de nacimiento:</label>
-      <input type="date" id="nacimiento" name="nacimiento">
-    </div>
+      <div class="form-container">
+        <form class="my-form" novalidate>
+          <h3 class="form-heading">Mi Formulario</h3>
 
-    <div class="checkbox-group">
-      <input type="checkbox" id="cambiarColor" class="color-toggle">
-      <label for="cambiarColor">Cambiar color de fondo</label>
-    </div>
+          <!-- 3. :first-child -->
+          <div class="form-group">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Juan" required>
+          </div>
 
-    <button type="submit">Validar</button>
-  </form>
-</div>
+          <div class="form-group">
+            <label for="apellido">Apellido:</label>
+            <input type="text" id="apellido" name="apellido" placeholder="Hernández" required>
+          </div>
+
+          <!-- 5. input[type="email"] -->
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="email@example.com" required>
+          </div>
+
+          <!-- 15. Input con ícono -->
+          <div class="form-group input-icon-wrapper">
+            <label for="telefono">Teléfono:</label>
+            <input type="tel" id="telefono" name="telefono" placeholder="+57 000 000 0000" required>
+          </div>
+
+          <div class="form-group">
+            <label for="nacimiento">Fecha de nacimiento:</label>
+            <input type="date" id="nacimiento" name="nacimiento">
+          </div>
+
+          <!-- checkbox -->
+          <div class="checkbox-group">
+            <input type="checkbox" id="cambiarColor" class="color-toggle">
+            <label for="cambiarColor">Cambiar color de fondo</label>
+          </div>
+
+          <!-- 1 & 13. Botón hover + sombra -->
+          <button type="submit" class="btn-primary">Validar</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- 17, 19, 20 -->
+    <section id="tarjetas" class="section-cards">
+      <h2 class="section-title">Tarjetas</h2>
+
+      <div class="cards-row">
+        <div class="card center-card">
+          <img src="https://via.placeholder.com/120" alt="Imagen ejemplo" class="card-img" />
+          <h3 class="card-title">Tarjeta Central</h3>
+          <p class="card-text">Contenido de la tarjeta.</p>
+          <button class="btn-delete">✖</button>
+        </div>
+
+        <!-- 19. z-index -->
+        <div class="stack-box box-back">Caja 1</div>
+        <div class="stack-box box-front">Caja 2</div>
+      </div>
+    </section>
+
+    <!-- 7, 8, 12, 14 -->
+    <section id="contacto" class="section-contact">
+      <h2 class="section-title">Contacto</h2>
+
+      <p class="unique-paragraph">Este es un párrafo único (estilizado con :only-of-type).</p>
+
+      <div class="multi-para">
+        <p>Primer párrafo (resaltado con :first-of-type).</p>
+        <p>Segundo párrafo normal.</p>
+      </div>
+
+      <!-- 14. Blockquote -->
+      <blockquote class="fancy-quote">
+        <p>Ejemplo de cita con comillas añadidas usando ::before y ::after.</p>
+      </blockquote>
+    </section>
+  </main>
+</body>
+</html>
+
+
 

@@ -1,135 +1,126 @@
+/* 9, 21, 22, 23: Variables */
+:root {
+  --primary: #007bff;
+  --primary-dark: #0056b3;
+  --accent: #ff8a65;
+  --bg: #f4f4f4;
+  --text: #222;
+  --card-bg: #fff;
+}
+body.dark {
+  --primary: #66b2ff;
+  --bg: #111;
+  --text: #eee;
+  --card-bg: #1a1a1a;
+}
+
+/* General */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
-  padding: 0;
-  background-color: #f4f4f4;
-  text-align: center; /* centra el contenido horizontalmente */
-  background-image: url(https://vanacco.com/wp-content/uploads/2020/06/Form-1.jpg);
-background-repeat: no-repeat;
-background-size: cover;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
 }
+main { padding-top: 70px; }
 
+/* 18. Navegación fija */
+.main-nav {
+  position: fixed; top: 0; left: 0; right: 0;
+  background: var(--card-bg);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.main-nav ul { display: flex; list-style: none; margin: 0; padding: 10px; gap: 12px; }
+.main-nav a { text-decoration: none; color: var(--text); padding: 6px 10px; border-radius: 6px; }
+.main-nav a:hover { background: var(--primary); color: #fff; }
 
+/* 11. Icono en títulos */
+.section-title::before { content: "🔹 "; }
+
+/* 2. :target */
+.hidden-message { max-height: 0; overflow: hidden; transition: max-height .3s; }
+.hidden-message:target { max-height: 100px; background: #e0ffe0; padding: 10px; }
+
+/* Formulario */
 .form-container {
-  display: inline-block; /* permite centrar usando text-align del body */
-  margin: 50px auto; /* separación desde arriba */
-  padding: 20px;
-  background-color: #ffffff; 
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  max-width: 400px;
-  box-sizing: border-box;
-  text-align: left; /* el contenido interno vuelve a alinearse a la izquierda */
-  
+  max-width: 420px; margin: 20px auto; padding: 20px;
+  background: var(--card-bg); border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.form-group { margin-bottom: 12px; }
+.form-group label { display: block; margin-bottom: 4px; }
+.form-group input { width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 6px; }
+
+/* 3. :first-child */
+.form-container .form-group:first-child label { color: var(--primary-dark); }
+
+/* 6. :focus */
+input:focus { border-color: var(--primary); outline: none; }
+
+/* 4. :invalid */
+input:invalid { border-color: red; }
+
+/* 5. input[type="email"] */
+input[type="email"] { border-left: 4px solid var(--primary); }
+
+/* 15. Input con ícono */
+.input-icon-wrapper { position: relative; }
+.input-icon-wrapper::before {
+  content: "📞"; position: absolute; left: 8px; top: 60%; transform: translateY(-50%);
+}
+.input-icon-wrapper input { padding-left: 28px; }
+
+/* 12. p::after */
+p::after {
+  content: ""; display: block; height: 2px; width: 40px;
+  background: linear-gradient(90deg, var(--primary), var(--accent, #ff4081));
+  margin: 6px 0;
 }
 
-.my-form {
-  transition: background-color 0.3s ease;
+/* 1 & 13. Botón */
+.btn-primary {
+  background: var(--primary);
+  color: #fff; border: none; padding: 10px; width: 100%;
+  border-radius: 6px; cursor: pointer; position: relative;
+}
+.btn-primary:hover { background: var(--primary-dark); }
+.btn-primary::after {
+  content: ""; position: absolute; left: 10%; right: 10%; bottom: -6px;
+  height: 6px; background: rgba(0,0,0,0.2); filter: blur(6px); border-radius: 6px;
 }
 
-.my-form h2 {
-  text-align: center;
-  color: #333;
-  margin-bottom: 20px;
+/* 17. Botón eliminar absoluto */
+.btn-delete {
+  position: absolute; top: 8px; right: 8px;
+  border: none; background: rgba(0,0,0,0.1); padding: 4px 6px; border-radius: 4px;
 }
 
-.form-group {
-  margin-bottom: 15px;
-}
+/* 16. Imagen relative */
+.card-img { position: relative; top: -10px; }
 
-.form-group label {
-  display: block;
-  margin-bottom: 5px;
-  color: #555;
-}
-
-.form-group input[type="text"],
-.form-group input[type="email"] {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
-
-.checkbox-group {
-  margin-top: 20px;
+/* 20. Card centrada */
+.center-card {
   position: relative;
+  left: 50%; transform: translateX(-50%);
+  width: 220px; height: 240px;
+  background: var(--card-bg); border-radius: 10px; padding: 14px;
+  text-align: center; box-shadow: 0 6px 12px rgba(0,0,0,0.1);
 }
 
-/* Ocultar checkbox original */
-.color-toggle {
-  position: absolute;
-  opacity: 0;
-  width: 0;
-  height: 0;
+/* 19. z-index */
+.stack-box {
+  width: 100px; height: 100px; display: flex; align-items: center; justify-content: center;
+  color: #fff; border-radius: 6px; margin: 10px;
 }
+.box-back { background: purple; position: relative; z-index: 1; top: 20px; left: 20px; }
+.box-front { background: steelblue; position: relative; z-index: 2; left: -40px; }
 
-/* Label que hará de checkbox */
-.checkbox-group label {
-  display: inline-block;
-  cursor: pointer;
-  position: relative;
-  padding-left: 28px;
-  color: #555;
-}
+/* 7. :only-of-type */
+.unique-paragraph:only-of-type { border-left: 4px solid var(--primary); padding-left: 8px; }
 
-/* Caja del checkbox */
-.checkbox-group label::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 18px;
-  height: 18px;
-  border: 2px solid #555;
-  border-radius: 4px;
-  background: #fff;
-  transition: background-color 0.2s, border-color 0.2s;
-}
+/* 8. :first-of-type */
+.multi-para p:first-of-type { font-weight: bold; }
 
-/* Palomita */
-.checkbox-group label::after {
-  content: '✔';
-  position: absolute;
-  left: 2px;
-  top: 50%;
-  transform: translateY(-58%);
-  font-size: 14px;
-  color: #fff;
-  opacity: 0;
-  transition: opacity 0.2s;
-}
-
-/* Cuando está marcado */
-.color-toggle:checked + label::before {
-  background-color: #007bff;
-  border-color: #007bff;
-}
-.color-toggle:checked + label::after {
-  opacity: 1;
-}
-
-/* Cambiar color del formulario cuando el checkbox está marcado */
-.my-form:has(.color-toggle:checked) {
-  background-color: #e0ffe0;
-}
-
-.my-form button {
-  width: 100%;
-  padding: 10px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 16px;
-  margin-top: 20px;
-  transition: background-color 0.3s ease;
-}
-
-.my-form button:hover {
-  background-color: #0056b3;
-}
+/* 14. Blockquote comillas */
+.fancy-quote { position: relative; padding: 10px 20px; border-left: 4px solid var(--primary); }
+.fancy-quote::before { content: "“"; font-size: 30px; position: absolute; left: 4px; top: -10px; color: var(--primary); }
+.fancy-quote::after { content: "”"; font-size: 30px; position: absolute; right: 4px; bottom: -10px; color: var(--primary); }
