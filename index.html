@@ -1,119 +1,160 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Formulario Avanzado - GFPI-F-135 V04</title>
-  <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad CSS - Selectores y Pseudo-clases</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- 18. Barra de navegación fija -->
+    <nav class="navbar-fixed">
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#botones">Botones</a></li>
+            <li><a href="#formularios">Formularios</a></li>
+            <li><a href="#posicionamiento">Posicionamiento</a></li>
+        </ul>
+    </nav>
 
-  <!-- 18. Navegación fija -->
-  <nav class="main-nav">
-    <ul>
-      <li><a href="#inicio">Inicio</a></li>
-      <li><a href="#formulario">Formulario</a></li>
-      <li><a href="#tarjetas">Tarjetas</a></li>
-      <li><a href="#contacto">Contacto</a></li>
-    </ul>
-  </nav>
+    <main class="container">
+        <!-- 2. Target para mostrar mensaje oculto -->
+        <section id="inicio">
+            <h1>Actividad CSS - Selectores y Pseudo-clases</h1>
+            <a href="#mensaje-oculto">Mostrar mensaje oculto</a>
+            <div id="mensaje-oculto" class="hidden-message">
+                <p>¡Este mensaje se muestra usando :target!</p>
+                <a href="#inicio">Ocultar mensaje</a>
+            </div>
+        </section>
 
-  <main>
-    <section id="inicio" class="hero">
-      <h1 class="title">Bienvenido</h1>
-      <p class="lead">Ejemplo con pseudo-clases y pseudo-elementos en CSS.</p>
-    </section>
+        <!-- 1. Botón que cambia de color en hover -->
+        <section id="botones">
+            <h2>Botones Interactivos</h2>
+            
+            <button class="hover-button">Botón con hover</button>
+            
+            <!-- 13. Botón con efecto de sombra usando ::after -->
+            <button class="shadow-button">Botón con sombra</button>
+        </section>
 
-    <!-- 2. :target -->
-    <section id="formulario" class="section-form">
-      <h2 class="section-title">Formulario</h2>
+        <!-- 3. Primer hijo con estilo especial -->
+        <section class="container-children">
+            <h2>Selectores de hijos</h2>
+            <p>Este es el primer párrafo (first-child)</p>
+            <p>Este es el segundo párrafo</p>
+            <p>Este es el tercer párrafo</p>
+        </section>
 
-      <a href="#mensaje-oculto" class="show-msg-link">Mostrar mensaje oculto</a>
-      <div id="mensaje-oculto" class="hidden-message">
-        <p>¡Aparecí gracias a <code>:target</code>!</p>
-      </div>
+        <!-- 8. Primer párrafo de tipo con first-of-type -->
+        <section class="section-types">
+            <h2>Selectores de tipo</h2>
+            <div>Este es un div</div>
+            <p>Este es el primer párrafo (first-of-type)</p>
+            <div>Otro div</div>
+            <p>Este es el segundo párrafo</p>
+        </section>
 
-      <div class="form-container">
-        <form class="my-form" novalidate>
-          <h3 class="form-heading">Mi Formulario</h3>
+        <!-- 7. Elemento único de su tipo -->
+        <section class="unique-section">
+            <h2>Elementos únicos</h2>
+            <p>Párrafo normal</p>
+            <p>Otro párrafo normal</p>
+            <span>Este span es único de su tipo (only-of-type)</span>
+            <p>Más párrafos</p>
+        </section>
 
-          <!-- 3. :first-child -->
-          <div class="form-group">
-            <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" name="nombre" placeholder="Juan" required>
-          </div>
+        <!-- 4, 5, 6. Formularios con validación -->
+        <section id="formularios">
+            <h2>Formularios Interactivos</h2>
+            
+            <form class="form-container">
+                <div class="form-group">
+                    <label for="nombre">Nombre (requerido):</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <!-- 15. Input con ícono usando ::before -->
+                    <div class="input-with-icon">
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="telefono">Teléfono:</label>
+                    <input type="tel" id="telefono" name="telefono">
+                </div>
+                
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
 
-          <div class="form-group">
-            <label for="apellido">Apellido:</label>
-            <input type="text" id="apellido" name="apellido" placeholder="Hernández" required>
-          </div>
+        <!-- 14. Bloque de cita con comillas -->
+        <section>
+            <h2>Citas</h2>
+            <blockquote class="quote-block">
+                La programación no es solo escribir código, es resolver problemas de manera creativa.
+            </blockquote>
+        </section>
 
-          <!-- 5. input[type="email"] -->
-          <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" placeholder="email@example.com" required>
-          </div>
+        <!-- 12. Párrafos con línea decorativa después -->
+        <section class="decorated-paragraphs">
+            <h2>Párrafos Decorados</h2>
+            <p>Este párrafo tiene una línea decorativa después.</p>
+            <p>Este también tiene su línea decorativa.</p>
+            <p>Y este párrafo también.</p>
+        </section>
 
-          <!-- 15. Input con ícono -->
-          <div class="form-group input-icon-wrapper">
-            <label for="telefono">Teléfono:</label>
-            <input type="tel" id="telefono" name="telefono" placeholder="+57 000 000 0000" required>
-          </div>
+        <!-- 16, 17. Posicionamiento -->
+        <section id="posicionamiento">
+            <h2>Posicionamiento</h2>
+            
+            <!-- 16. Imagen con position relative -->
+            <div class="relative-container">
+                <div class="relative-image">Imagen movida con relative</div>
+            </div>
+            
+            <!-- 17. Tarjeta con botón absolute -->
+            <div class="card-container">
+                <div class="card">
+                    <h3>Tarjeta de ejemplo</h3>
+                    <p>Esta tarjeta tiene un botón de eliminar posicionado de forma absoluta.</p>
+                    <button class="delete-button">×</button>
+                </div>
+            </div>
+            
+            <!-- 19. Cajas apiladas con z-index -->
+            <div class="stacked-boxes">
+                <div class="box box-1">Caja 1 (abajo)</div>
+                <div class="box box-2">Caja 2 (arriba)</div>
+            </div>
+            
+            <!-- 20. Card centrada con position y transform -->
+            <div class="centered-card">
+                <div class="center-card">
+                    <h3>Card Centrada</h3>
+                    <p>Esta card está centrada usando position y transform</p>
+                </div>
+            </div>
+        </section>
 
-          <div class="form-group">
-            <label for="nacimiento">Fecha de nacimiento:</label>
-            <input type="date" id="nacimiento" name="nacimiento">
-          </div>
+        <!-- 22. Control de tema usando solo CSS -->
+        <section class="theme-section">
+            <h2>Control de Tema</h2>
+            <input type="checkbox" id="theme-toggle" class="theme-checkbox">
+            <label for="theme-toggle" class="theme-toggle-label">Cambiar a Tema Oscuro</label>
+        </section>
 
-          <!-- checkbox -->
-          <div class="checkbox-group">
-            <input type="checkbox" id="cambiarColor" class="color-toggle">
-            <label for="cambiarColor">Cambiar color de fondo</label>
-          </div>
-
-          <!-- 1 & 13. Botón hover + sombra -->
-          <button type="submit" class="btn-primary">Validar</button>
-        </form>
-      </div>
-    </section>
-
-    <!-- 17, 19, 20 -->
-    <section id="tarjetas" class="section-cards">
-      <h2 class="section-title">Tarjetas</h2>
-
-      <div class="cards-row">
-        <div class="card center-card">
-          <img src="https://via.placeholder.com/120" alt="Imagen ejemplo" class="card-img" />
-          <h3 class="card-title">Tarjeta Central</h3>
-          <p class="card-text">Contenido de la tarjeta.</p>
-          <button class="btn-delete">✖</button>
-        </div>
-
-        <!-- 19. z-index -->
-        <div class="stack-box box-back">Caja 1</div>
-        <div class="stack-box box-front">Caja 2</div>
-      </div>
-    </section>
-
-    <!-- 7, 8, 12, 14 -->
-    <section id="contacto" class="section-contact">
-      <h2 class="section-title">Contacto</h2>
-
-      <p class="unique-paragraph">Este es un párrafo único (estilizado con :only-of-type).</p>
-
-      <div class="multi-para">
-        <p>Primer párrafo (resaltado con :first-of-type).</p>
-        <p>Segundo párrafo normal.</p>
-      </div>
-
-      <!-- 14. Blockquote -->
-      <blockquote class="fancy-quote">
-        <p>Ejemplo de cita con comillas añadidas usando ::before y ::after.</p>
-      </blockquote>
-    </section>
-  </main>
+        <!-- 24. Sección con variables locales -->
+        <section class="local-variables-section">
+            <h2>Variables Locales</h2>
+            <div class="card local-card">
+                <h3>Card con variables locales</h3>
+                <p>Esta card usa variables CSS definidas localmente</p>
+            </div>
+        </section>
+    </main>
 </body>
 </html>
-
-
-
