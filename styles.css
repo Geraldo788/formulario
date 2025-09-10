@@ -1,4 +1,4 @@
-/* 9, 21. Variables globales en :root */
+/* Variables globales en :root */
 :root {
     --color-primario: #3498db;
     --color-secundario: #2ecc71;
@@ -10,11 +10,11 @@
     --radio-borde: 8px;
     --sombra: 0 2px 10px rgba(0, 0, 0, 0.1);
     
-    /* 23. Variable con valor fallback */
+    /* Variable con valor fallback */
     --color-acento: var(--color-personalizado, #9b59b6);
 }
 
-/* 22. Tema oscuro usando checkbox (sin JavaScript) */
+/* Tema oscuro usando checkbox */
 .theme-checkbox {
     display: none;
 }
@@ -49,7 +49,7 @@ body {
     padding: var(--espaciado);
 }
 
-/* 18. Barra de navegación fija */
+/* Barra de navegación fija */
 .navbar-fixed {
     position: fixed;
     top: 0;
@@ -61,7 +61,7 @@ body {
     z-index: 1000;
 }
 
-/* 10. Navegación semántica con hover */
+/* Navegación semántica con hover */
 .navbar-fixed ul {
     list-style: none;
     display: block;
@@ -86,15 +86,15 @@ body {
     background-color: rgba(255, 255, 255, 0.2);
 }
 
-/* 11. Iconos antes de títulos con ::before */
+/* Iconos antes de títulos con ::before */
 h1::before,
 h2::before {
-    content: "🎯 ";
+    content: "🎯";
     margin-right: 0.5rem;
 }
 
 h3::before {
-    content: "📌 ";
+    content: "📌";
     margin-right: 0.5rem;
 }
 
@@ -107,7 +107,7 @@ section {
     box-shadow: var(--sombra);
 }
 
-/* 1. Botón que cambia de color en hover */
+/*  Botón que cambia de color en hover */
 .hover-button {
     background-color: var(--color-primario);
     color: white;
@@ -125,7 +125,7 @@ section {
     transform: translateY(-2px);
 }
 
-/* 13. Botón con efecto de sombra usando ::after */
+/* Botón con efecto de sombra usando ::after */
 .shadow-button {
     position: relative;
     background-color: var(--color-acento);
@@ -160,7 +160,7 @@ section {
     bottom: -8px;
 }
 
-/* 2. Target para mostrar mensaje oculto */
+/* Target para mostrar mensaje oculto */
 .hidden-message {
     display: none;
     background-color: var(--color-secundario);
@@ -180,7 +180,7 @@ section {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* 3. Primer hijo con estilo especial */
+/* Primer hijo con estilo especial */
 .container-children p:first-child {
     background-color: var(--color-primario);
     color: white;
@@ -189,7 +189,7 @@ section {
     font-weight: bold;
 }
 
-/* 8. Primer párrafo de tipo */
+/* Primer párrafo de tipo */
 .section-types p:first-of-type {
     background-color: var(--color-secundario);
     color: white;
@@ -198,7 +198,7 @@ section {
     font-weight: bold;
 }
 
-/* 7. Elemento único de su tipo */
+/* Elemento único de su tipo */
 .unique-section span:only-of-type {
     background-color: var(--color-acento);
     color: white;
@@ -237,25 +237,25 @@ input {
     color: var(--color-texto);
 }
 
-/* 6. Campo activo cambia de borde */
+/* Campo activo cambia de borde */
 input:focus {
     outline: none;
     border-color: var(--color-primario);
     box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
 }
 
-/* 4. Campos no válidos */
+/* Campos no válidos */
 input:invalid {
     border-color: var(--color-peligro);
     background-color: rgba(231, 76, 60, 0.1);
 }
 
-/* 5. Campos de tipo email */
+/* Campos de tipo email */
 input[type="email"] {
     background-image: linear-gradient(45deg, transparent 40%, rgba(52, 152, 219, 0.1) 50%, transparent 60%);
 }
 
-/* 15. Input con ícono usando ::before */
+/* Input con ícono usando ::before */
 .input-with-icon {
     position: relative;
 }
@@ -274,7 +274,7 @@ input[type="email"] {
     padding-left: 3rem;
 }
 
-/* 14. Comillas en bloque de cita */
+/* Comillas en bloque de cita */
 .quote-block {
     position: relative;
     font-style: italic;
@@ -303,7 +303,7 @@ input[type="email"] {
     right: 10px;
 }
 
-/* 12. Línea decorativa después de párrafos */
+/* Línea decorativa después de párrafos */
 .decorated-paragraphs p::after {
     content: '';
     display: block;
@@ -314,7 +314,7 @@ input[type="email"] {
     border-radius: 2px;
 }
 
-/* 16. Imagen con position relative */
+/* Imagen con position relative */
 .relative-container {
     background-color: rgba(46, 204, 113, 0.1);
     padding: 2rem;
@@ -334,7 +334,7 @@ input[type="email"] {
     top: 20px;
 }
 
-/* 17. Tarjeta con botón absolute */
+/* Tarjeta con botón absolute */
 .card-container {
     margin: 2rem 0;
 }
@@ -370,7 +370,7 @@ input[type="email"] {
     transform: scale(1.1);
 }
 
-/* 19. Cajas apiladas con z-index */
+/* Cajas apiladas con z-index */
 .stacked-boxes {
     position: relative;
     height: 200px;
@@ -403,7 +403,7 @@ input[type="email"] {
     z-index: 2;
 }
 
-/* 20. Card centrada con position y transform */
+/* Card centrada con position y transform */
 .centered-card {
     position: relative;
     height: 300px;
@@ -425,7 +425,7 @@ input[type="email"] {
     min-width: 250px;
 }
 
-/* Control de tema sin JavaScript */
+/* Control de tema */
 .theme-toggle-label {
     background-color: var(--color-acento);
     color: white;
@@ -447,7 +447,7 @@ input[type="email"] {
     content: " ✓ Tema Oscuro Activado";
 }
 
-/* 24. Variables locales dentro de .card */
+/* Variables locales dentro de .card */
 .local-variables-section .local-card {
     --local-color: #f39c12;
     --local-bg: rgba(243, 156, 18, 0.1);
